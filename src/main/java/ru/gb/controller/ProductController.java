@@ -21,6 +21,11 @@ public class ProductController {
     public ProductController(ProductRepository repository) {
         this.repository = repository;
     }
+    @RequestMapping(value = "/home" ,method = RequestMethod.GET)
+    public String home(Model model){
+        model.addAttribute("title", "Main Page");
+        return "home";
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
